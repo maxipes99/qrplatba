@@ -2,21 +2,28 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>QR platba Albrechtice nad Orlicí</title>
+    <title>QR platba</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0px;
-            
+        /* Wrapper pro responzivní iframe */
+        .responsive-iframe {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* Poměr stran 16:9 */
         }
-        iframe {
-            border: 0px solid ;
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 1000px;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://albrechtice.tode.cz/qr4.php" title="QR kód"></iframe>
+    <div class="responsive-iframe">
+        <iframe src="https://albrechtice.tode.cz/qr4.php" title="QR kód"></iframe>
+    </div>
 </body>
 </html>
+
