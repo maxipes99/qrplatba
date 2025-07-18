@@ -8,8 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $vs = $cisloPopisne + 5000;
     $amount = $bezSlevy * 800 + $seSlevou * 700 + $studenci * 550;
     $formattedAmount = number_format($amount, 2, '.', '');
+    $year = date('Y');
 
-    $apiUrl = "https://api.paylibo.com/paylibo/generator/czech/image?accountNumber=21220571&bankCode=0100&amount={$formattedAmount}&currency=CZK&vs={$vs}&message=Platba%20odpady%202025";
+    $apiUrl = "https://api.paylibo.com/paylibo/generator/czech/image?accountNumber=21220571&bankCode=0100&amount={$formattedAmount}&currency=CZK&vs={$vs}&message=Platba%20odpady%20{$year}";
 }
 ?>
 <!DOCTYPE html>
